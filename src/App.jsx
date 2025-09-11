@@ -1,7 +1,113 @@
 import './App.css'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 function App() {
+  const [selectedGallery, setSelectedGallery] = useState(null)
+  const [isGalleryOpen, setIsGalleryOpen] = useState(false)
+
+  // Gallery data
+  const galleries = {
+    benafique: {
+      title: "Benafique Portfolio Gallery",
+      description: "A showcase of my digital portrait work created for Benafique platform, demonstrating various artistic styles and professional quality.",
+      images: [
+        { src: "/src/assets/images/benafique/134666866_154818629756655_8162675739851721615_n.jpg", alt: "Benafique Portrait 1" },
+        { src: "/src/assets/images/benafique/134756959_154610896444095_8743057965242909823_n.jpg", alt: "Benafique Portrait 2" },
+        { src: "/src/assets/images/benafique/135179539_154818619756656_1347774845674547771_n.jpg", alt: "Benafique Portrait 3" },
+        { src: "/src/assets/images/benafique/135201875_154818656423319_7013189573141210360_n.jpg", alt: "Benafique Portrait 4" },
+        { src: "/src/assets/images/benafique/135307113_154818646423320_7022759632052491225_n.jpg", alt: "Benafique Portrait 5" },
+        { src: "/src/assets/images/benafique/136825798_162690138969504_1081430040988676386_n.jpg", alt: "Benafique Portrait 6" },
+        { src: "/src/assets/images/benafique/137535221_162696985635486_7530847570235496342_n.jpg", alt: "Benafique Portrait 7" },
+        { src: "/src/assets/images/benafique/138192697_164064458832072_4617485151502914369_n.jpg", alt: "Benafique Portrait 8" },
+        { src: "/src/assets/images/benafique/138825097_164060538832464_7100779006894881816_n.jpg", alt: "Benafique Portrait 9" },
+        { src: "/src/assets/images/benafique/139936781_166421318596386_8495543106502574344_n.jpg", alt: "Benafique Portrait 10" }
+      ]
+    },
+    crownandpaw: {
+      title: "Crown and Paw Portfolio Gallery",
+      description: "A collection of custom pet portraits created for Crown and Paw, showcasing various themes, styles, and creative concepts that bring beloved pets to life as digital artwork.",
+      images: [
+        { src: "/src/assets/images/crownandpaw/Renaissance_Collection_4_500x.webp", alt: "Renaissance Pet Portrait" },
+        { src: "/src/assets/images/crownandpaw/TheAristocrat2_8c8edd56-f1b4-46ed-9aba-547b4197dcda_375x.jpg", alt: "Aristocrat Pet Portrait" },
+        { src: "/src/assets/images/crownandpaw/pet_portrait_military_outfit_veteran_375x.webp", alt: "Military Pet Portrait" },
+        { src: "/src/assets/images/crownandpaw/atlas.aries.aussies_375x.webp", alt: "Australian Shepherd Portrait" },
+        { src: "/src/assets/images/crownandpaw/beatricemgolden_123721522_383477622844716_9103325890636000004_n_375x.jpg", alt: "Golden Retriever Portrait" },
+        { src: "/src/assets/images/crownandpaw/crownandpaw_109844584_1200002630342874_1492102714399702302_n_375x.jpg", alt: "Crown and Paw Featured Work" },
+        { src: "/src/assets/images/crownandpaw/iggy.coco_f01a3c16-73e3-4818-9a87-a0eb6a7fcfeb_375x.webp", alt: "Iggy Coco Pet Portrait" },
+        { src: "/src/assets/images/crownandpaw/talk_to_the_paw_98157855_566356017590475_725091166907302331_n_375x.webp", alt: "Talk to the Paw Design" },
+        { src: "/src/assets/images/crownandpaw/thegoldenlifeof2_375x.webp", alt: "Golden Life Pet Portrait" },
+        { src: "/src/assets/images/crownandpaw/KuboTheGeneral_375x.webp", alt: "Kubo The General Portrait" }
+      ]
+    },
+    masterpieceme: {
+      title: "Masterpiece Me Portfolio Gallery",
+      description: "A collection of renaissance-style portraits and classical artwork created for Masterpiece Me, showcasing the fusion of classical art techniques with modern digital artistry.",
+      images: [
+        { src: "/src/assets/images/masterpieceme/TheArcherBG3-CanvasonFloor_300x.avif", alt: "The Archer Renaissance Portrait" },
+        { src: "/src/assets/images/masterpieceme/TheDwarfBG4-CanvasonFloor_300x.avif", alt: "The Dwarf Classical Portrait" },
+        { src: "/src/assets/images/masterpieceme/TheSwordsmanBG4-CanvasonFloor_300x.avif", alt: "The Swordsman Renaissance Art" },
+        { src: "/src/assets/images/masterpieceme/TheWhiteSorcererBG1-CanvasonFloor_300x.avif", alt: "The White Sorcerer Portrait" },
+        { src: "/src/assets/images/masterpieceme/TheStepBrothersPosterMockUp_300x.avif", alt: "The Step Brothers Poster" },
+        { src: "/src/assets/images/masterpieceme/145563982_1152554785181571_5536826764487585550_n_300x.avif", alt: "Masterpiece Me Featured Work" },
+        { src: "/src/assets/images/masterpieceme/divineindc_118286570_335551904292831_2863370620445534766_n_300x.avif", alt: "Divine DC Renaissance Portrait" },
+        { src: "/src/assets/images/masterpieceme/homesweethazel_113058249_122380609250351_4347520818081672827_n_300x.avif", alt: "Home Sweet Hazel Portrait" },
+        { src: "/src/assets/images/masterpieceme/mar.torosian_118167732_228170102050720_7309799743468610605_n_300x.avif", alt: "Mar Torosian Classical Portrait" },
+        { src: "/src/assets/images/masterpieceme/sonia.zubareva_102812657_4460477710644608_8846720010770244238_n_300x.avif", alt: "Sonia Zubareva Renaissance Art" },
+        { src: "/src/assets/images/masterpieceme/therealmamaofstaten_island_123329599_405362310478938_6134187370111676335_n_300x.avif", alt: "Staten Island Mama Portrait" },
+        { src: "/src/assets/images/masterpieceme/varneyfamily_126463819_166871051760128_6891284726816486829_n_300x.avif", alt: "Varney Family Renaissance Portrait" }
+      ]
+    },
+    tellmytale: {
+      title: "Tell My Tale Portfolio Gallery",
+      description: "A collection of story visualizations and book designs created for Tell My Tale platform, transforming personal stories into engaging visual narratives and children's book illustrations.",
+      images: [
+        { src: "/src/assets/images/tellmytale/BookMockup_6-I.webp", alt: "Tell My Tale Book Mockup" },
+        { src: "/src/assets/images/tellmytale/Book_Mockup_3.2-AA_1.webp", alt: "Animal Adventure Book Design" },
+        { src: "/src/assets/images/tellmytale/TMT_anima_l_adventure_Boy.webp", alt: "Animal Adventure Character Design" },
+        { src: "/src/assets/images/tellmytale/Romy-AnimalAdventure.webp", alt: "Romy Animal Adventure Story" },
+        { src: "/src/assets/images/tellmytale/banner_2.webp", alt: "Tell My Tale Banner Design" },
+        { src: "/src/assets/images/tellmytale/2.webp", alt: "Tell My Tale Story Illustration" }
+      ]
+    },
+    tailoredcanvases: {
+      title: "Tailored Canvases Portfolio Gallery",
+      description: "Custom canvas artwork and personalized designs that showcase artistic versatility and attention to detail in creating unique, tailored visual pieces.",
+      images: [
+        { src: "/src/assets/images/tailoredcanvases/1_2_1_large.webp", alt: "Custom Canvas Design 1" },
+        { src: "/src/assets/images/tailoredcanvases/1_b85d7d2b-b968-42e3-adcd-231cfe8d244a_1_large.webp", alt: "Custom Canvas Design 2" },
+        { src: "/src/assets/images/tailoredcanvases/2_1778fabd-d109-45d2-b42c-0aaf0bd9ab51_1_large.webp", alt: "Custom Canvas Design 3" },
+        { src: "/src/assets/images/tailoredcanvases/v1_1_2a2e91c0-87e0-4c70-89c5-c117affbb5cd_large.webp", alt: "Tailored Canvas Artwork" }
+      ]
+    },
+    wonderme: {
+      title: "Wonder Me Portfolio Gallery",
+      description: "Creative and personalized artwork created for Wonder Me platform, showcasing diverse artistic styles and custom design solutions that bring imagination to life.",
+      images: [
+        { src: "/src/assets/images/wonderme/1_6.webp", alt: "Wonder Me Creative Design 1" },
+        { src: "/src/assets/images/wonderme/2_5.webp", alt: "Wonder Me Creative Design 2" },
+        { src: "/src/assets/images/wonderme/BatelAd-IMG1_aea88fbd-d8e6-4c84-96fe-06f15e71fc59.webp", alt: "Batel Advertisement Design 1" },
+        { src: "/src/assets/images/wonderme/BatelAd-IMG2_7fd04ff5-347f-4e0e-85dc-41fce4e8e627.webp", alt: "Batel Advertisement Design 2" },
+        { src: "/src/assets/images/wonderme/RachelEdel-IMG4.webp", alt: "Rachel Edel Custom Design" },
+        { src: "/src/assets/images/wonderme/TheMermaid_1.webp", alt: "The Mermaid Artwork 1" },
+        { src: "/src/assets/images/wonderme/TheMermaid_2.webp", alt: "The Mermaid Artwork 2" },
+        { src: "/src/assets/images/wonderme/WM-1004-A_35729df3-cff5-4b93-887b-ff513fc1d65b.webp", alt: "Wonder Me Design WM-1004-A" },
+        { src: "/src/assets/images/wonderme/WM-1004-B_5bbfa436-96a0-4f93-9558-87bc341f2426.webp", alt: "Wonder Me Design WM-1004-B" },
+        { src: "/src/assets/images/wonderme/WM-1011A.webp", alt: "Wonder Me Design WM-1011A" },
+        { src: "/src/assets/images/wonderme/WM-1011b.webp", alt: "Wonder Me Design WM-1011B" },
+        { src: "/src/assets/images/wonderme/Yana-IMG1_63b05456-a182-4bb1-b240-228f38906d9a.webp", alt: "Yana Custom Design" }
+      ]
+    }
+  }
+
+  const openGallery = (galleryType) => {
+    setSelectedGallery(galleryType)
+    setIsGalleryOpen(true)
+  }
+
+  const closeGallery = () => {
+    setIsGalleryOpen(false)
+    setSelectedGallery(null)
+  }
   useEffect(() => {
     // Scroll animation observer
     const observerOptions = {
@@ -66,6 +172,11 @@ function App() {
       {/* Hero Section */}
       <section id="home" className="hero">
         <div className="hero-content">
+          <img 
+            src="/src/assets/images/profile/profile.jpg" 
+            alt="Rego Kier Mongosera Profile" 
+            className="hero-profile-image"
+          />
           <h1>Rego Kier Mongosera</h1>
           <p className="subtitle">Professional Graphic Artist & Digital Portrait Specialist</p>
           <p className="description">
@@ -81,12 +192,7 @@ function App() {
       <section id="about" className="section about">
         <div className="container">
           <h2 className="section-title">About Me</h2>
-          <div className="about-content">
-            <img 
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" 
-              alt="Profile" 
-              className="about-image"
-            />
+          <div className="about-content-text-only">
             <div className="about-text">
               <p>
                 I'm Rego Kier Mongosera, a dedicated graphic artist with 8 years of professional experience 
@@ -205,10 +311,10 @@ function App() {
           <h2 className="section-title">My Portfolio</h2>
           <div className="portfolio-grid">
             
-            <div className="portfolio-item">
+            <div className="portfolio-item" onClick={() => openGallery('benafique')} style={{cursor: 'pointer'}}>
               <img 
-                src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=600&h=400&fit=crop" 
-                alt="Digital Portrait" 
+                src="/src/assets/images/benafique/134666866_154818629756655_8162675739851721615_n.jpg" 
+                alt="Minimalist Digital Portrait - Benafique" 
                 className="portfolio-image"
               />
               <div className="portfolio-content">
@@ -222,13 +328,14 @@ function App() {
                   <span className="tag">Minimalist Style</span>
                   <span className="tag">Photoshop</span>
                 </div>
+                <div className="view-gallery-btn">Click to View Gallery</div>
               </div>
             </div>
 
-            <div className="portfolio-item">
+            <div className="portfolio-item" onClick={() => openGallery('crownandpaw')} style={{cursor: 'pointer'}}>
               <img 
-                src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=600&h=400&fit=crop" 
-                alt="Pet Portrait" 
+                src="/src/assets/images/crownandpaw/Renaissance_Collection_4_500x.webp" 
+                alt="Custom Pet Portrait - Crown and Paw" 
                 className="portfolio-image"
               />
               <div className="portfolio-content">
@@ -240,15 +347,16 @@ function App() {
                 <div className="portfolio-tags">
                   <span className="tag">Pet Portraits</span>
                   <span className="tag">Photo Editing</span>
-                  <span className="tag">Digital Art</span>
+                  <span className="tag">Crown and Paw</span>
                 </div>
+                <div className="view-gallery-btn">Click to View Gallery</div>
               </div>
             </div>
 
-            <div className="portfolio-item">
+            <div className="portfolio-item" onClick={() => openGallery('masterpieceme')} style={{cursor: 'pointer'}}>
               <img 
-                src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop" 
-                alt="Renaissance Portrait" 
+                src="/src/assets/images/masterpieceme/TheArcherBG3-CanvasonFloor_300x.avif" 
+                alt="Renaissance Style Portrait - Masterpiece Me" 
                 className="portfolio-image"
               />
               <div className="portfolio-content">
@@ -260,8 +368,9 @@ function App() {
                 <div className="portfolio-tags">
                   <span className="tag">Renaissance Art</span>
                   <span className="tag">Classical Style</span>
-                  <span className="tag">Photo Manipulation</span>
+                  <span className="tag">Masterpiece Me</span>
                 </div>
+                <div className="view-gallery-btn">Click to View Gallery</div>
               </div>
             </div>
 
@@ -307,48 +416,48 @@ function App() {
 
             <div className="portfolio-item">
               <img 
-                src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=600&h=400&fit=crop" 
-                alt="Canva Design" 
+                src="/src/assets/images/benafique/135593143_158934762678375_8701891166037523321_n.jpg" 
+                alt="Creative Portrait Designs" 
                 className="portfolio-image"
               />
               <div className="portfolio-content">
-                <h3 className="portfolio-title">Quick Design Solutions with Canva</h3>
+                <h3 className="portfolio-title">Creative Portrait Designs</h3>
                 <p className="portfolio-description">
-                  Efficient and creative design solutions using Canva for social media graphics, 
-                  marketing materials, and quick turnaround projects with professional results.
+                  Innovative and creative portrait designs showcasing artistic versatility 
+                  and technical expertise in digital portrait creation for Benafique clients.
                 </p>
                 <div className="portfolio-tags">
-                  <span className="tag">Canva Design</span>
-                  <span className="tag">Quick Solutions</span>
-                  <span className="tag">Social Media</span>
+                  <span className="tag">Creative Design</span>
+                  <span className="tag">Artistic</span>
+                  <span className="tag">Benafique</span>
                 </div>
               </div>
             </div>
 
             <div className="portfolio-item">
               <img 
-                src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop" 
-                alt="Video Editing" 
+                src="/src/assets/images/crownandpaw/beatricemgolden_123721522_383477622844716_9103325890636000004_n_375x.jpg" 
+                alt="Astronaut Pet Portrait" 
                 className="portfolio-image"
               />
               <div className="portfolio-content">
-                <h3 className="portfolio-title">Video Production & Editing</h3>
+                <h3 className="portfolio-title">Themed Pet Portraits</h3>
                 <p className="portfolio-description">
-                  Creative video editing and motion graphics projects utilizing CapCut for dynamic 
-                  video content creation and engaging multimedia presentations with professional quality.
+                  Creative themed pet portraits for Crown and Paw, featuring unique concepts like astronaut pets, 
+                  military themes, and aristocratic designs that showcase artistic versatility.
                 </p>
                 <div className="portfolio-tags">
-                  <span className="tag">Video Editing</span>
-                  <span className="tag">CapCut</span>
-                  <span className="tag">Motion Graphics</span>
+                  <span className="tag">Themed Portraits</span>
+                  <span className="tag">Creative Design</span>
+                  <span className="tag">Crown and Paw</span>
                 </div>
               </div>
             </div>
 
-            <div className="portfolio-item">
+            <div className="portfolio-item" onClick={() => openGallery('tellmytale')} style={{cursor: 'pointer'}}>
               <img 
-                src="https://images.unsplash.com/photo-1634128221889-82ed6efebfc3?w=600&h=400&fit=crop" 
-                alt="Tell My Tale" 
+                src="/src/assets/images/tellmytale/BookMockup_6-I.webp" 
+                alt="Tell My Tale - Story Visualizations" 
                 className="portfolio-image"
               />
               <div className="portfolio-content">
@@ -360,26 +469,69 @@ function App() {
                 <div className="portfolio-tags">
                   <span className="tag">Story Visualization</span>
                   <span className="tag">Creative Design</span>
-                  <span className="tag">Visual Storytelling</span>
+                  <span className="tag">Tell My Tale</span>
                 </div>
+                <div className="view-gallery-btn">Click to View Gallery</div>
+              </div>
+            </div>
+
+            <div className="portfolio-item" onClick={() => openGallery('tailoredcanvases')} style={{cursor: 'pointer'}}>
+              <img 
+                src="/src/assets/images/tailoredcanvases/1_2_1_large.webp" 
+                alt="Tailored Canvases - Custom Artwork" 
+                className="portfolio-image"
+              />
+              <div className="portfolio-content">
+                <h3 className="portfolio-title">Tailored Canvases - Custom Artwork</h3>
+                <p className="portfolio-description">
+                  Specialized custom canvas artwork and visual designs that capture unique artistic visions, 
+                  creating personalized pieces that reflect individual creativity and artistic expression.
+                </p>
+                <div className="portfolio-tags">
+                  <span className="tag">Custom Canvases</span>
+                  <span className="tag">Personalized Art</span>
+                  <span className="tag">Creative Design</span>
+                </div>
+                <div className="view-gallery-btn">Click to View Gallery</div>
+              </div>
+            </div>
+
+            <div className="portfolio-item" onClick={() => openGallery('wonderme')} style={{cursor: 'pointer'}}>
+              <img 
+                src="/src/assets/images/wonderme/TheMermaid_1.webp" 
+                alt="Wonder Me - Creative Artwork" 
+                className="portfolio-image"
+              />
+              <div className="portfolio-content">
+                <h3 className="portfolio-title">Wonder Me - Creative Artwork</h3>
+                <p className="portfolio-description">
+                  Imaginative and personalized designs created for Wonder Me platform, featuring diverse artistic styles 
+                  from fantasy themes to custom portraits that bring creative visions to life.
+                </p>
+                <div className="portfolio-tags">
+                  <span className="tag">Wonder Me</span>
+                  <span className="tag">Creative Design</span>
+                  <span className="tag">Fantasy Art</span>
+                </div>
+                <div className="view-gallery-btn">Click to View Gallery</div>
               </div>
             </div>
 
             <div className="portfolio-item">
               <img 
-                src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop" 
-                alt="Wonder Me" 
+                src="/src/assets/images/benafique/135307113_154818646423320_7022759632052491225_n.jpg" 
+                alt="Benafique Portrait Collection" 
                 className="portfolio-image"
               />
               <div className="portfolio-content">
-                <h3 className="portfolio-title">Wonder Me - Custom Artwork</h3>
+                <h3 className="portfolio-title">Benafique Portrait Collection</h3>
                 <p className="portfolio-description">
-                  Specialized graphic design services for Wonder Me platform, creating unique 
-                  custom artwork and visual designs that capture the essence of individual creativity and wonder.
+                  A comprehensive collection of digital portraits created for Benafique platform, 
+                  showcasing various artistic styles and techniques in minimalist portrait design.
                 </p>
                 <div className="portfolio-tags">
-                  <span className="tag">Custom Artwork</span>
-                  <span className="tag">Creative Design</span>
+                  <span className="tag">Benafique</span>
+                  <span className="tag">Portrait Gallery</span>
                   <span className="tag">Digital Art</span>
                 </div>
               </div>
@@ -387,20 +539,20 @@ function App() {
 
             <div className="portfolio-item">
               <img 
-                src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop" 
-                alt="AI Image Generation" 
+                src="/src/assets/images/benafique/135010164_154610976444087_2947771761512094313_n.jpg" 
+                alt="Professional Digital Portraits" 
                 className="portfolio-image"
               />
               <div className="portfolio-content">
-                <h3 className="portfolio-title">AI Image Generation & Enhancement</h3>
+                <h3 className="portfolio-title">Professional Digital Portraits</h3>
                 <p className="portfolio-description">
-                  Cutting-edge AI-powered image generation and enhancement services, creating unique 
-                  artwork and improving existing images using advanced artificial intelligence tools and techniques.
+                  High-quality professional portraits demonstrating advanced photo manipulation 
+                  and artistic rendering techniques for Benafique's premium portrait services.
                 </p>
                 <div className="portfolio-tags">
-                  <span className="tag">AI Generation</span>
-                  <span className="tag">Image Enhancement</span>
-                  <span className="tag">Innovation</span>
+                  <span className="tag">Professional</span>
+                  <span className="tag">High Quality</span>
+                  <span className="tag">Benafique</span>
                 </div>
               </div>
             </div>
@@ -408,6 +560,26 @@ function App() {
           </div>
         </div>
       </section>
+
+      {/* Gallery Modal */}
+      {isGalleryOpen && selectedGallery && (
+        <div className="gallery-modal-overlay" onClick={closeGallery}>
+          <div className="gallery-modal" onClick={(e) => e.stopPropagation()}>
+            <div className="gallery-modal-header">
+              <h2>{galleries[selectedGallery].title}</h2>
+              <button className="close-button" onClick={closeGallery}>×</button>
+            </div>
+            <p className="gallery-modal-description">{galleries[selectedGallery].description}</p>
+            <div className="gallery-modal-grid">
+              {galleries[selectedGallery].images.map((image, index) => (
+                <div key={index} className="gallery-modal-item">
+                  <img src={image.src} alt={image.alt} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Contact Section */}
       <section id="contact" className="section contact">
