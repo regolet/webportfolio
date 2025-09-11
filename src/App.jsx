@@ -311,6 +311,7 @@ function App() {
           <h2 className="section-title">My Portfolio</h2>
           <div className="portfolio-grid">
             
+            {/* Gallery Cards First - Priority */}
             <div className="portfolio-item" onClick={() => openGallery('benafique')} style={{cursor: 'pointer'}}>
               <img 
                 src="/src/assets/images/benafique/134666866_154818629756655_8162675739851721615_n.jpg" 
@@ -371,86 +372,6 @@ function App() {
                   <span className="tag">Masterpiece Me</span>
                 </div>
                 <div className="view-gallery-btn">Click to View Gallery</div>
-              </div>
-            </div>
-
-            <div className="portfolio-item">
-              <img 
-                src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=600&h=400&fit=crop" 
-                alt="3D Modeling" 
-                className="portfolio-image"
-              />
-              <div className="portfolio-content">
-                <h3 className="portfolio-title">3D Modeling & Design</h3>
-                <p className="portfolio-description">
-                  Architectural and product visualizations created using SketchUp, showcasing 
-                  technical precision and creative design solutions for various client projects.
-                </p>
-                <div className="portfolio-tags">
-                  <span className="tag">3D Modeling</span>
-                  <span className="tag">SketchUp</span>
-                  <span className="tag">Visualization</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="portfolio-item">
-              <img 
-                src="https://images.unsplash.com/photo-1609921212029-bb5a28e60960?w=600&h=400&fit=crop" 
-                alt="Photo Manipulation" 
-                className="portfolio-image"
-              />
-              <div className="portfolio-content">
-                <h3 className="portfolio-title">Advanced Photo Manipulation</h3>
-                <p className="portfolio-description">
-                  Complex photo editing and manipulation projects demonstrating expertise in 
-                  color correction, compositing, and creative digital enhancement techniques.
-                </p>
-                <div className="portfolio-tags">
-                  <span className="tag">Photo Editing</span>
-                  <span className="tag">Manipulation</span>
-                  <span className="tag">Color Grading</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="portfolio-item">
-              <img 
-                src="/src/assets/images/benafique/135593143_158934762678375_8701891166037523321_n.jpg" 
-                alt="Creative Portrait Designs" 
-                className="portfolio-image"
-              />
-              <div className="portfolio-content">
-                <h3 className="portfolio-title">Creative Portrait Designs</h3>
-                <p className="portfolio-description">
-                  Innovative and creative portrait designs showcasing artistic versatility 
-                  and technical expertise in digital portrait creation for Benafique clients.
-                </p>
-                <div className="portfolio-tags">
-                  <span className="tag">Creative Design</span>
-                  <span className="tag">Artistic</span>
-                  <span className="tag">Benafique</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="portfolio-item">
-              <img 
-                src="/src/assets/images/crownandpaw/beatricemgolden_123721522_383477622844716_9103325890636000004_n_375x.jpg" 
-                alt="Astronaut Pet Portrait" 
-                className="portfolio-image"
-              />
-              <div className="portfolio-content">
-                <h3 className="portfolio-title">Themed Pet Portraits</h3>
-                <p className="portfolio-description">
-                  Creative themed pet portraits for Crown and Paw, featuring unique concepts like astronaut pets, 
-                  military themes, and aristocratic designs that showcase artistic versatility.
-                </p>
-                <div className="portfolio-tags">
-                  <span className="tag">Themed Portraits</span>
-                  <span className="tag">Creative Design</span>
-                  <span className="tag">Crown and Paw</span>
-                </div>
               </div>
             </div>
 
@@ -517,41 +438,64 @@ function App() {
               </div>
             </div>
 
+            {/* Additional Portfolio Items */}
+
+            {/* Additional Portfolio Items */}
             <div className="portfolio-item">
               <img 
-                src="/src/assets/images/benafique/135307113_154818646423320_7022759632052491225_n.jpg" 
-                alt="Benafique Portrait Collection" 
+                src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=600&h=400&fit=crop" 
+                alt="3D Modeling" 
                 className="portfolio-image"
               />
               <div className="portfolio-content">
-                <h3 className="portfolio-title">Benafique Portrait Collection</h3>
+                <h3 className="portfolio-title">3D Modeling & Design</h3>
                 <p className="portfolio-description">
-                  A comprehensive collection of digital portraits created for Benafique platform, 
-                  showcasing various artistic styles and techniques in minimalist portrait design.
+                  Architectural and product visualizations created using SketchUp, showcasing 
+                  technical precision and creative design solutions for various client projects.
                 </p>
                 <div className="portfolio-tags">
-                  <span className="tag">Benafique</span>
-                  <span className="tag">Portrait Gallery</span>
-                  <span className="tag">Digital Art</span>
+                  <span className="tag">3D Modeling</span>
+                  <span className="tag">SketchUp</span>
+                  <span className="tag">Visualization</span>
                 </div>
               </div>
             </div>
 
             <div className="portfolio-item">
               <img 
-                src="/src/assets/images/benafique/135010164_154610976444087_2947771761512094313_n.jpg" 
-                alt="Professional Digital Portraits" 
+                src="https://images.unsplash.com/photo-1609921212029-bb5a28e60960?w=600&h=400&fit=crop" 
+                alt="Photo Manipulation" 
                 className="portfolio-image"
               />
               <div className="portfolio-content">
-                <h3 className="portfolio-title">Professional Digital Portraits</h3>
+                <h3 className="portfolio-title">Advanced Photo Manipulation</h3>
                 <p className="portfolio-description">
-                  High-quality professional portraits demonstrating advanced photo manipulation 
-                  and artistic rendering techniques for Benafique's premium portrait services.
+                  Complex photo editing and manipulation projects demonstrating expertise in 
+                  color correction, compositing, and creative digital enhancement techniques.
                 </p>
                 <div className="portfolio-tags">
-                  <span className="tag">Professional</span>
-                  <span className="tag">High Quality</span>
+                  <span className="tag">Photo Editing</span>
+                  <span className="tag">Manipulation</span>
+                  <span className="tag">Color Grading</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="portfolio-item">
+              <img 
+                src="/src/assets/images/benafique/135593143_158934762678375_8701891166037523321_n.jpg" 
+                alt="Creative Portrait Designs" 
+                className="portfolio-image"
+              />
+              <div className="portfolio-content">
+                <h3 className="portfolio-title">Creative Portrait Designs</h3>
+                <p className="portfolio-description">
+                  Innovative and creative portrait designs showcasing artistic versatility 
+                  and technical expertise in digital portrait creation for Benafique clients.
+                </p>
+                <div className="portfolio-tags">
+                  <span className="tag">Creative Design</span>
+                  <span className="tag">Artistic</span>
                   <span className="tag">Benafique</span>
                 </div>
               </div>
