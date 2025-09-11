@@ -11,90 +11,90 @@ function App() {
       title: "Benafique Portfolio Gallery",
       description: "A showcase of my digital portrait work created for Benafique platform, demonstrating various artistic styles and professional quality.",
       images: [
-        { src: "/src/assets/images/benafique/134666866_154818629756655_8162675739851721615_n.jpg", alt: "Benafique Portrait 1" },
-        { src: "/src/assets/images/benafique/134756959_154610896444095_8743057965242909823_n.jpg", alt: "Benafique Portrait 2" },
-        { src: "/src/assets/images/benafique/135179539_154818619756656_1347774845674547771_n.jpg", alt: "Benafique Portrait 3" },
-        { src: "/src/assets/images/benafique/135201875_154818656423319_7013189573141210360_n.jpg", alt: "Benafique Portrait 4" },
-        { src: "/src/assets/images/benafique/135307113_154818646423320_7022759632052491225_n.jpg", alt: "Benafique Portrait 5" },
-        { src: "/src/assets/images/benafique/136825798_162690138969504_1081430040988676386_n.jpg", alt: "Benafique Portrait 6" },
-        { src: "/src/assets/images/benafique/137535221_162696985635486_7530847570235496342_n.jpg", alt: "Benafique Portrait 7" },
-        { src: "/src/assets/images/benafique/138192697_164064458832072_4617485151502914369_n.jpg", alt: "Benafique Portrait 8" },
-        { src: "/src/assets/images/benafique/138825097_164060538832464_7100779006894881816_n.jpg", alt: "Benafique Portrait 9" },
-        { src: "/src/assets/images/benafique/139936781_166421318596386_8495543106502574344_n.jpg", alt: "Benafique Portrait 10" }
+        { src: "/images/benafique/134666866_154818629756655_8162675739851721615_n.jpg", alt: "Benafique Portrait 1" },
+        { src: "/images/benafique/134756959_154610896444095_8743057965242909823_n.jpg", alt: "Benafique Portrait 2" },
+        { src: "/images/benafique/135179539_154818619756656_1347774845674547771_n.jpg", alt: "Benafique Portrait 3" },
+        { src: "/images/benafique/135201875_154818656423319_7013189573141210360_n.jpg", alt: "Benafique Portrait 4" },
+        { src: "/images/benafique/135307113_154818646423320_7022759632052491225_n.jpg", alt: "Benafique Portrait 5" },
+        { src: "/images/benafique/136825798_162690138969504_1081430040988676386_n.jpg", alt: "Benafique Portrait 6" },
+        { src: "/images/benafique/137535221_162696985635486_7530847570235496342_n.jpg", alt: "Benafique Portrait 7" },
+        { src: "/images/benafique/138192697_164064458832072_4617485151502914369_n.jpg", alt: "Benafique Portrait 8" },
+        { src: "/images/benafique/138825097_164060538832464_7100779006894881816_n.jpg", alt: "Benafique Portrait 9" },
+        { src: "/images/benafique/139936781_166421318596386_8495543106502574344_n.jpg", alt: "Benafique Portrait 10" }
       ]
     },
     crownandpaw: {
       title: "Crown and Paw Portfolio Gallery",
       description: "A collection of custom pet portraits created for Crown and Paw, showcasing various themes, styles, and creative concepts that bring beloved pets to life as digital artwork.",
       images: [
-        { src: "/src/assets/images/crownandpaw/Renaissance_Collection_4_500x.webp", alt: "Renaissance Pet Portrait" },
-        { src: "/src/assets/images/crownandpaw/TheAristocrat2_8c8edd56-f1b4-46ed-9aba-547b4197dcda_375x.jpg", alt: "Aristocrat Pet Portrait" },
-        { src: "/src/assets/images/crownandpaw/pet_portrait_military_outfit_veteran_375x.webp", alt: "Military Pet Portrait" },
-        { src: "/src/assets/images/crownandpaw/atlas.aries.aussies_375x.webp", alt: "Australian Shepherd Portrait" },
-        { src: "/src/assets/images/crownandpaw/beatricemgolden_123721522_383477622844716_9103325890636000004_n_375x.jpg", alt: "Golden Retriever Portrait" },
-        { src: "/src/assets/images/crownandpaw/crownandpaw_109844584_1200002630342874_1492102714399702302_n_375x.jpg", alt: "Crown and Paw Featured Work" },
-        { src: "/src/assets/images/crownandpaw/iggy.coco_f01a3c16-73e3-4818-9a87-a0eb6a7fcfeb_375x.webp", alt: "Iggy Coco Pet Portrait" },
-        { src: "/src/assets/images/crownandpaw/talk_to_the_paw_98157855_566356017590475_725091166907302331_n_375x.webp", alt: "Talk to the Paw Design" },
-        { src: "/src/assets/images/crownandpaw/thegoldenlifeof2_375x.webp", alt: "Golden Life Pet Portrait" },
-        { src: "/src/assets/images/crownandpaw/KuboTheGeneral_375x.webp", alt: "Kubo The General Portrait" }
+        { src: "/images/crownandpaw/Renaissance_Collection_4_500x.webp", alt: "Renaissance Pet Portrait" },
+        { src: "/images/crownandpaw/TheAristocrat2_8c8edd56-f1b4-46ed-9aba-547b4197dcda_375x.jpg", alt: "Aristocrat Pet Portrait" },
+        { src: "/images/crownandpaw/pet_portrait_military_outfit_veteran_375x.webp", alt: "Military Pet Portrait" },
+        { src: "/images/crownandpaw/atlas.aries.aussies_375x.webp", alt: "Australian Shepherd Portrait" },
+        { src: "/images/crownandpaw/beatricemgolden_123721522_383477622844716_9103325890636000004_n_375x.jpg", alt: "Golden Retriever Portrait" },
+        { src: "/images/crownandpaw/crownandpaw_109844584_1200002630342874_1492102714399702302_n_375x.jpg", alt: "Crown and Paw Featured Work" },
+        { src: "/images/crownandpaw/iggy.coco_f01a3c16-73e3-4818-9a87-a0eb6a7fcfeb_375x.webp", alt: "Iggy Coco Pet Portrait" },
+        { src: "/images/crownandpaw/talk_to_the_paw_98157855_566356017590475_725091166907302331_n_375x.webp", alt: "Talk to the Paw Design" },
+        { src: "/images/crownandpaw/thegoldenlifeof2_375x.webp", alt: "Golden Life Pet Portrait" },
+        { src: "/images/crownandpaw/KuboTheGeneral_375x.webp", alt: "Kubo The General Portrait" }
       ]
     },
     masterpieceme: {
       title: "Masterpiece Me Portfolio Gallery",
       description: "A collection of renaissance-style portraits and classical artwork created for Masterpiece Me, showcasing the fusion of classical art techniques with modern digital artistry.",
       images: [
-        { src: "/src/assets/images/masterpieceme/TheArcherBG3-CanvasonFloor_300x.avif", alt: "The Archer Renaissance Portrait" },
-        { src: "/src/assets/images/masterpieceme/TheDwarfBG4-CanvasonFloor_300x.avif", alt: "The Dwarf Classical Portrait" },
-        { src: "/src/assets/images/masterpieceme/TheSwordsmanBG4-CanvasonFloor_300x.avif", alt: "The Swordsman Renaissance Art" },
-        { src: "/src/assets/images/masterpieceme/TheWhiteSorcererBG1-CanvasonFloor_300x.avif", alt: "The White Sorcerer Portrait" },
-        { src: "/src/assets/images/masterpieceme/TheStepBrothersPosterMockUp_300x.avif", alt: "The Step Brothers Poster" },
-        { src: "/src/assets/images/masterpieceme/145563982_1152554785181571_5536826764487585550_n_300x.avif", alt: "Masterpiece Me Featured Work" },
-        { src: "/src/assets/images/masterpieceme/divineindc_118286570_335551904292831_2863370620445534766_n_300x.avif", alt: "Divine DC Renaissance Portrait" },
-        { src: "/src/assets/images/masterpieceme/homesweethazel_113058249_122380609250351_4347520818081672827_n_300x.avif", alt: "Home Sweet Hazel Portrait" },
-        { src: "/src/assets/images/masterpieceme/mar.torosian_118167732_228170102050720_7309799743468610605_n_300x.avif", alt: "Mar Torosian Classical Portrait" },
-        { src: "/src/assets/images/masterpieceme/sonia.zubareva_102812657_4460477710644608_8846720010770244238_n_300x.avif", alt: "Sonia Zubareva Renaissance Art" },
-        { src: "/src/assets/images/masterpieceme/therealmamaofstaten_island_123329599_405362310478938_6134187370111676335_n_300x.avif", alt: "Staten Island Mama Portrait" },
-        { src: "/src/assets/images/masterpieceme/varneyfamily_126463819_166871051760128_6891284726816486829_n_300x.avif", alt: "Varney Family Renaissance Portrait" }
+        { src: "/images/masterpieceme/TheArcherBG3-CanvasonFloor_300x.avif", alt: "The Archer Renaissance Portrait" },
+        { src: "/images/masterpieceme/TheDwarfBG4-CanvasonFloor_300x.avif", alt: "The Dwarf Classical Portrait" },
+        { src: "/images/masterpieceme/TheSwordsmanBG4-CanvasonFloor_300x.avif", alt: "The Swordsman Renaissance Art" },
+        { src: "/images/masterpieceme/TheWhiteSorcererBG1-CanvasonFloor_300x.avif", alt: "The White Sorcerer Portrait" },
+        { src: "/images/masterpieceme/TheStepBrothersPosterMockUp_300x.avif", alt: "The Step Brothers Poster" },
+        { src: "/images/masterpieceme/145563982_1152554785181571_5536826764487585550_n_300x.avif", alt: "Masterpiece Me Featured Work" },
+        { src: "/images/masterpieceme/divineindc_118286570_335551904292831_2863370620445534766_n_300x.avif", alt: "Divine DC Renaissance Portrait" },
+        { src: "/images/masterpieceme/homesweethazel_113058249_122380609250351_4347520818081672827_n_300x.avif", alt: "Home Sweet Hazel Portrait" },
+        { src: "/images/masterpieceme/mar.torosian_118167732_228170102050720_7309799743468610605_n_300x.avif", alt: "Mar Torosian Classical Portrait" },
+        { src: "/images/masterpieceme/sonia.zubareva_102812657_4460477710644608_8846720010770244238_n_300x.avif", alt: "Sonia Zubareva Renaissance Art" },
+        { src: "/images/masterpieceme/therealmamaofstaten_island_123329599_405362310478938_6134187370111676335_n_300x.avif", alt: "Staten Island Mama Portrait" },
+        { src: "/images/masterpieceme/varneyfamily_126463819_166871051760128_6891284726816486829_n_300x.avif", alt: "Varney Family Renaissance Portrait" }
       ]
     },
     tellmytale: {
       title: "Tell My Tale Portfolio Gallery",
       description: "A collection of story visualizations and book designs created for Tell My Tale platform, transforming personal stories into engaging visual narratives and children's book illustrations.",
       images: [
-        { src: "/src/assets/images/tellmytale/BookMockup_6-I.webp", alt: "Tell My Tale Book Mockup" },
-        { src: "/src/assets/images/tellmytale/Book_Mockup_3.2-AA_1.webp", alt: "Animal Adventure Book Design" },
-        { src: "/src/assets/images/tellmytale/TMT_anima_l_adventure_Boy.webp", alt: "Animal Adventure Character Design" },
-        { src: "/src/assets/images/tellmytale/Romy-AnimalAdventure.webp", alt: "Romy Animal Adventure Story" },
-        { src: "/src/assets/images/tellmytale/banner_2.webp", alt: "Tell My Tale Banner Design" },
-        { src: "/src/assets/images/tellmytale/2.webp", alt: "Tell My Tale Story Illustration" }
+        { src: "/images/tellmytale/BookMockup_6-I.webp", alt: "Tell My Tale Book Mockup" },
+        { src: "/images/tellmytale/Book_Mockup_3.2-AA_1.webp", alt: "Animal Adventure Book Design" },
+        { src: "/images/tellmytale/TMT_anima_l_adventure_Boy.webp", alt: "Animal Adventure Character Design" },
+        { src: "/images/tellmytale/Romy-AnimalAdventure.webp", alt: "Romy Animal Adventure Story" },
+        { src: "/images/tellmytale/banner_2.webp", alt: "Tell My Tale Banner Design" },
+        { src: "/images/tellmytale/2.webp", alt: "Tell My Tale Story Illustration" }
       ]
     },
     tailoredcanvases: {
       title: "Tailored Canvases Portfolio Gallery",
       description: "Custom canvas artwork and personalized designs that showcase artistic versatility and attention to detail in creating unique, tailored visual pieces.",
       images: [
-        { src: "/src/assets/images/tailoredcanvases/1_2_1_large.webp", alt: "Custom Canvas Design 1" },
-        { src: "/src/assets/images/tailoredcanvases/1_b85d7d2b-b968-42e3-adcd-231cfe8d244a_1_large.webp", alt: "Custom Canvas Design 2" },
-        { src: "/src/assets/images/tailoredcanvases/2_1778fabd-d109-45d2-b42c-0aaf0bd9ab51_1_large.webp", alt: "Custom Canvas Design 3" },
-        { src: "/src/assets/images/tailoredcanvases/v1_1_2a2e91c0-87e0-4c70-89c5-c117affbb5cd_large.webp", alt: "Tailored Canvas Artwork" }
+        { src: "/images/tailoredcanvases/1_2_1_large.webp", alt: "Custom Canvas Design 1" },
+        { src: "/images/tailoredcanvases/1_b85d7d2b-b968-42e3-adcd-231cfe8d244a_1_large.webp", alt: "Custom Canvas Design 2" },
+        { src: "/images/tailoredcanvases/2_1778fabd-d109-45d2-b42c-0aaf0bd9ab51_1_large.webp", alt: "Custom Canvas Design 3" },
+        { src: "/images/tailoredcanvases/v1_1_2a2e91c0-87e0-4c70-89c5-c117affbb5cd_large.webp", alt: "Tailored Canvas Artwork" }
       ]
     },
     wonderme: {
       title: "Wonder Me Portfolio Gallery",
       description: "Creative and personalized artwork created for Wonder Me platform, showcasing diverse artistic styles and custom design solutions that bring imagination to life.",
       images: [
-        { src: "/src/assets/images/wonderme/1_6.webp", alt: "Wonder Me Creative Design 1" },
-        { src: "/src/assets/images/wonderme/2_5.webp", alt: "Wonder Me Creative Design 2" },
-        { src: "/src/assets/images/wonderme/BatelAd-IMG1_aea88fbd-d8e6-4c84-96fe-06f15e71fc59.webp", alt: "Batel Advertisement Design 1" },
-        { src: "/src/assets/images/wonderme/BatelAd-IMG2_7fd04ff5-347f-4e0e-85dc-41fce4e8e627.webp", alt: "Batel Advertisement Design 2" },
-        { src: "/src/assets/images/wonderme/RachelEdel-IMG4.webp", alt: "Rachel Edel Custom Design" },
-        { src: "/src/assets/images/wonderme/TheMermaid_1.webp", alt: "The Mermaid Artwork 1" },
-        { src: "/src/assets/images/wonderme/TheMermaid_2.webp", alt: "The Mermaid Artwork 2" },
-        { src: "/src/assets/images/wonderme/WM-1004-A_35729df3-cff5-4b93-887b-ff513fc1d65b.webp", alt: "Wonder Me Design WM-1004-A" },
-        { src: "/src/assets/images/wonderme/WM-1004-B_5bbfa436-96a0-4f93-9558-87bc341f2426.webp", alt: "Wonder Me Design WM-1004-B" },
-        { src: "/src/assets/images/wonderme/WM-1011A.webp", alt: "Wonder Me Design WM-1011A" },
-        { src: "/src/assets/images/wonderme/WM-1011b.webp", alt: "Wonder Me Design WM-1011B" },
-        { src: "/src/assets/images/wonderme/Yana-IMG1_63b05456-a182-4bb1-b240-228f38906d9a.webp", alt: "Yana Custom Design" }
+        { src: "/images/wonderme/1_6.webp", alt: "Wonder Me Creative Design 1" },
+        { src: "/images/wonderme/2_5.webp", alt: "Wonder Me Creative Design 2" },
+        { src: "/images/wonderme/BatelAd-IMG1_aea88fbd-d8e6-4c84-96fe-06f15e71fc59.webp", alt: "Batel Advertisement Design 1" },
+        { src: "/images/wonderme/BatelAd-IMG2_7fd04ff5-347f-4e0e-85dc-41fce4e8e627.webp", alt: "Batel Advertisement Design 2" },
+        { src: "/images/wonderme/RachelEdel-IMG4.webp", alt: "Rachel Edel Custom Design" },
+        { src: "/images/wonderme/TheMermaid_1.webp", alt: "The Mermaid Artwork 1" },
+        { src: "/images/wonderme/TheMermaid_2.webp", alt: "The Mermaid Artwork 2" },
+        { src: "/images/wonderme/WM-1004-A_35729df3-cff5-4b93-887b-ff513fc1d65b.webp", alt: "Wonder Me Design WM-1004-A" },
+        { src: "/images/wonderme/WM-1004-B_5bbfa436-96a0-4f93-9558-87bc341f2426.webp", alt: "Wonder Me Design WM-1004-B" },
+        { src: "/images/wonderme/WM-1011A.webp", alt: "Wonder Me Design WM-1011A" },
+        { src: "/images/wonderme/WM-1011b.webp", alt: "Wonder Me Design WM-1011B" },
+        { src: "/images/wonderme/Yana-IMG1_63b05456-a182-4bb1-b240-228f38906d9a.webp", alt: "Yana Custom Design" }
       ]
     }
   }
@@ -173,7 +173,7 @@ function App() {
       <section id="home" className="hero">
         <div className="hero-content">
           <img 
-            src="/src/assets/images/profile/profile.jpg" 
+            src="/images/profile/profile.jpg" 
             alt="Rego Kier Mongosera Profile" 
             className="hero-profile-image"
           />
@@ -314,7 +314,7 @@ function App() {
             {/* Gallery Cards First - Priority */}
             <div className="portfolio-item" onClick={() => openGallery('benafique')} style={{cursor: 'pointer'}}>
               <img 
-                src="/src/assets/images/benafique/134666866_154818629756655_8162675739851721615_n.jpg" 
+                src="/images/benafique/134666866_154818629756655_8162675739851721615_n.jpg" 
                 alt="Minimalist Digital Portrait - Benafique" 
                 className="portfolio-image"
               />
@@ -335,7 +335,7 @@ function App() {
 
             <div className="portfolio-item" onClick={() => openGallery('crownandpaw')} style={{cursor: 'pointer'}}>
               <img 
-                src="/src/assets/images/crownandpaw/Renaissance_Collection_4_500x.webp" 
+                src="/images/crownandpaw/Renaissance_Collection_4_500x.webp" 
                 alt="Custom Pet Portrait - Crown and Paw" 
                 className="portfolio-image"
               />
@@ -356,7 +356,7 @@ function App() {
 
             <div className="portfolio-item" onClick={() => openGallery('masterpieceme')} style={{cursor: 'pointer'}}>
               <img 
-                src="/src/assets/images/masterpieceme/TheArcherBG3-CanvasonFloor_300x.avif" 
+                src="/images/masterpieceme/TheArcherBG3-CanvasonFloor_300x.avif" 
                 alt="Renaissance Style Portrait - Masterpiece Me" 
                 className="portfolio-image"
               />
@@ -377,7 +377,7 @@ function App() {
 
             <div className="portfolio-item" onClick={() => openGallery('tellmytale')} style={{cursor: 'pointer'}}>
               <img 
-                src="/src/assets/images/tellmytale/BookMockup_6-I.webp" 
+                src="/images/tellmytale/BookMockup_6-I.webp" 
                 alt="Tell My Tale - Story Visualizations" 
                 className="portfolio-image"
               />
@@ -398,7 +398,7 @@ function App() {
 
             <div className="portfolio-item" onClick={() => openGallery('tailoredcanvases')} style={{cursor: 'pointer'}}>
               <img 
-                src="/src/assets/images/tailoredcanvases/1_2_1_large.webp" 
+                src="/images/tailoredcanvases/1_2_1_large.webp" 
                 alt="Tailored Canvases - Custom Artwork" 
                 className="portfolio-image"
               />
@@ -419,7 +419,7 @@ function App() {
 
             <div className="portfolio-item" onClick={() => openGallery('wonderme')} style={{cursor: 'pointer'}}>
               <img 
-                src="/src/assets/images/wonderme/TheMermaid_1.webp" 
+                src="/images/wonderme/TheMermaid_1.webp" 
                 alt="Wonder Me - Creative Artwork" 
                 className="portfolio-image"
               />
@@ -483,7 +483,7 @@ function App() {
 
             <div className="portfolio-item">
               <img 
-                src="/src/assets/images/benafique/135593143_158934762678375_8701891166037523321_n.jpg" 
+                src="/images/benafique/135593143_158934762678375_8701891166037523321_n.jpg" 
                 alt="Creative Portrait Designs" 
                 className="portfolio-image"
               />
