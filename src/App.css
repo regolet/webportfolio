@@ -664,7 +664,7 @@
   margin: 1.5rem 0;
 }
 
-a.platform-card {
+.platform-card {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -674,6 +674,9 @@ a.platform-card {
   border-radius: var(--radius-md);
   transition: all var(--transition-fast);
   text-decoration: none;
+}
+
+a.platform-card {
   cursor: pointer;
 }
 
@@ -787,6 +790,93 @@ a.platform-card {
   background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light));
   border-radius: 4px;
   transition: width 1s ease-out;
+}
+
+/* Experience Section */
+.experience-timeline {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.experience-card {
+  padding: 1.75rem;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+.experience-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.experience-header h3 {
+  color: var(--color-text-primary);
+  font-size: 1.35rem;
+  margin-bottom: 0.35rem;
+}
+
+.experience-company {
+  color: var(--color-primary);
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.experience-location {
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+}
+
+.experience-period {
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  color: var(--color-text-primary);
+  flex-shrink: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  height: fit-content;
+  padding: 0.45rem 0.85rem;
+}
+
+.experience-highlights {
+  color: var(--color-text-tertiary);
+  display: grid;
+  gap: 0.55rem;
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.resume-download-card {
+  align-items: center;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  padding: 1.75rem;
+}
+
+.resume-download-card h3 {
+  color: var(--color-text-primary);
+  margin-bottom: 0.35rem;
+}
+
+.resume-download-card p {
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 768px) {
+  .experience-header,
+  .resume-download-card {
+    align-items: flex-start;
+    flex-direction: column;
+  }
 }
 
 /* Tools Section */

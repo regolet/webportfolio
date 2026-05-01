@@ -190,9 +190,6 @@ const SkillBar = ({ skill, level, delay = 0, icon: Icon }) => {
 }
 
 function App() {
-  const [selectedGallery, setSelectedGallery] = useState(null)
-  const [isGalleryOpen, setIsGalleryOpen] = useState(false)
-  const [activeFilter, setActiveFilter] = useState('all')
   const [theme, setTheme] = useState(() => {
     if (typeof window !== 'undefined') {
       const savedTheme = localStorage.getItem('theme')
@@ -208,218 +205,6 @@ function App() {
 
   const toggleTheme = () => {
     setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light')
-  }
-
-  // Portfolio items with categories
-  const portfolioItems = [
-    {
-      id: 'benafique',
-      title: 'Minimalist Digital Portraits',
-      description: 'Custom minimalist digital portraits created for Benafique, one of the best-selling digital portrait platforms online.',
-      image: '/images/benafique/134666866_154818629756655_8162675739851721615_n.jpg',
-      tags: ['Digital Portraits', 'Minimalist Style', 'Photoshop'],
-      category: 'portraits',
-      hasGallery: true,
-      featured: true
-    },
-    {
-      id: 'crownandpaw',
-      title: 'Custom Pet Portraits',
-      description: 'Professional pet portrait artwork created for Crown and Paw, transforming beloved pets into stunning digital art pieces.',
-      image: '/images/crownandpaw/Renaissance_Collection_4_500x.webp',
-      tags: ['Pet Portraits', 'Photo Editing', 'Crown and Paw'],
-      category: 'pet-art',
-      hasGallery: true,
-      featured: true
-    },
-    {
-      id: 'masterpieceme',
-      title: 'Renaissance Style Portraits',
-      description: 'Elegant renaissance-style portraits created for Masterpiece Me, combining classical art aesthetics with modern digital techniques.',
-      image: '/images/masterpieceme/TheArcherBG3-CanvasonFloor_300x.avif',
-      tags: ['Renaissance Art', 'Classical Style', 'Masterpiece Me'],
-      category: 'renaissance',
-      hasGallery: true,
-      featured: true
-    },
-    {
-      id: 'tellmytale',
-      title: 'Tell My Tale - Story Visualizations',
-      description: 'Creative visual storytelling and graphic design work for Tell My Tale platform.',
-      image: '/images/tellmytale/BookMockup_6-I.webp',
-      tags: ['Story Visualization', 'Creative Design', 'Tell My Tale'],
-      category: 'illustration',
-      hasGallery: true
-    },
-    {
-      id: 'tailoredcanvases',
-      title: 'Tailored Canvases - Custom Artwork',
-      description: 'Specialized custom canvas artwork and visual designs that capture unique artistic visions.',
-      image: '/images/tailoredcanvases/1_2_1_large.webp',
-      tags: ['Custom Canvases', 'Personalized Art', 'Creative Design'],
-      category: 'custom',
-      hasGallery: true
-    },
-    {
-      id: 'wonderme',
-      title: 'Wonder Me - Creative Artwork',
-      description: 'Imaginative and personalized designs created for Wonder Me platform.',
-      image: '/images/wonderme/TheMermaid_1.webp',
-      tags: ['Wonder Me', 'Creative Design', 'Fantasy Art'],
-      category: 'illustration',
-      hasGallery: true
-    },
-    {
-      id: 'planetart',
-      title: 'PlanetArt - Photo Gifts & Personalization',
-      description: 'Professional photo editing and personalized product designs for PlanetArt and its subsidiary brands including SimplyToImpress, PhotoAffections, MyCustomCase, CanvasWorld, and PersonalCreations.',
-      image: '/images/planetart/planetart.webp',
-      tags: ['Photo Gifts', 'Personalization', 'PlanetArt'],
-      category: 'photo-gifts',
-      hasGallery: true,
-      featured: true
-    },
-    {
-      id: '3d-modeling',
-      title: '3D Modeling & Design',
-      description: 'Architectural and product visualizations created using SketchUp.',
-      image: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=600&h=400&fit=crop',
-      tags: ['3D Modeling', 'SketchUp', 'Visualization'],
-      category: '3d',
-      hasGallery: false
-    },
-    {
-      id: 'photo-manipulation',
-      title: 'Advanced Photo Manipulation',
-      description: 'Complex photo editing and manipulation projects demonstrating expertise in color correction and compositing.',
-      image: 'https://images.unsplash.com/photo-1609921212029-bb5a28e60960?w=600&h=400&fit=crop',
-      tags: ['Photo Editing', 'Manipulation', 'Color Grading'],
-      category: 'editing',
-      hasGallery: false
-    }
-  ]
-
-  const filters = [
-    { id: 'all', label: 'All Work' },
-    { id: 'portraits', label: 'Portraits' },
-    { id: 'pet-art', label: 'Pet Art' },
-    { id: 'renaissance', label: 'Renaissance' },
-    { id: 'illustration', label: 'Illustration' },
-    { id: 'custom', label: 'Custom Art' },
-    { id: 'photo-gifts', label: 'Photo Gifts' }
-  ]
-
-  const filteredPortfolio = activeFilter === 'all'
-    ? portfolioItems
-    : portfolioItems.filter(item => item.category === activeFilter)
-
-  // Gallery data
-  const galleries = {
-    benafique: {
-      title: "Benafique Portfolio Gallery",
-      description: "A showcase of my digital portrait work created for Benafique platform, demonstrating various artistic styles and professional quality.",
-      images: [
-        { src: "/images/benafique/134666866_154818629756655_8162675739851721615_n.jpg", alt: "Benafique Portrait 1" },
-        { src: "/images/benafique/134756959_154610896444095_8743057965242909823_n.jpg", alt: "Benafique Portrait 2" },
-        { src: "/images/benafique/135179539_154818619756656_1347774845674547771_n.jpg", alt: "Benafique Portrait 3" },
-        { src: "/images/benafique/135201875_154818656423319_7013189573141210360_n.jpg", alt: "Benafique Portrait 4" },
-        { src: "/images/benafique/135307113_154818646423320_7022759632052491225_n.jpg", alt: "Benafique Portrait 5" },
-        { src: "/images/benafique/136825798_162690138969504_1081430040988676386_n.jpg", alt: "Benafique Portrait 6" },
-        { src: "/images/benafique/137535221_162696985635486_7530847570235496342_n.jpg", alt: "Benafique Portrait 7" },
-        { src: "/images/benafique/138192697_164064458832072_4617485151502914369_n.jpg", alt: "Benafique Portrait 8" },
-        { src: "/images/benafique/138825097_164060538832464_7100779006894881816_n.jpg", alt: "Benafique Portrait 9" },
-        { src: "/images/benafique/139936781_166421318596386_8495543106502574344_n.jpg", alt: "Benafique Portrait 10" }
-      ]
-    },
-    crownandpaw: {
-      title: "Crown and Paw Portfolio Gallery",
-      description: "A collection of custom pet portraits created for Crown and Paw.",
-      images: [
-        { src: "/images/crownandpaw/Renaissance_Collection_4_500x.webp", alt: "Renaissance Pet Portrait" },
-        { src: "/images/crownandpaw/TheAristocrat2_8c8edd56-f1b4-46ed-9aba-547b4197dcda_375x.jpg", alt: "Aristocrat Pet Portrait" },
-        { src: "/images/crownandpaw/pet_portrait_military_outfit_veteran_375x.webp", alt: "Military Pet Portrait" },
-        { src: "/images/crownandpaw/atlas.aries.aussies_375x.webp", alt: "Australian Shepherd Portrait" },
-        { src: "/images/crownandpaw/beatricemgolden_123721522_383477622844716_9103325890636000004_n_375x.jpg", alt: "Golden Retriever Portrait" },
-        { src: "/images/crownandpaw/crownandpaw_109844584_1200002630342874_1492102714399702302_n_375x.jpg", alt: "Crown and Paw Featured Work" },
-        { src: "/images/crownandpaw/iggy.coco_f01a3c16-73e3-4818-9a87-a0eb6a7fcfeb_375x.webp", alt: "Iggy Coco Pet Portrait" },
-        { src: "/images/crownandpaw/talk_to_the_paw_98157855_566356017590475_725091166907302331_n_375x.webp", alt: "Talk to the Paw Design" },
-        { src: "/images/crownandpaw/thegoldenlifeof2_375x.webp", alt: "Golden Life Pet Portrait" },
-        { src: "/images/crownandpaw/KuboTheGeneral_375x.webp", alt: "Kubo The General Portrait" }
-      ]
-    },
-    masterpieceme: {
-      title: "Masterpiece Me Portfolio Gallery",
-      description: "A collection of renaissance-style portraits and classical artwork.",
-      images: [
-        { src: "/images/masterpieceme/TheArcherBG3-CanvasonFloor_300x.avif", alt: "The Archer Renaissance Portrait" },
-        { src: "/images/masterpieceme/TheDwarfBG4-CanvasonFloor_300x.avif", alt: "The Dwarf Classical Portrait" },
-        { src: "/images/masterpieceme/TheSwordsmanBG4-CanvasonFloor_300x.avif", alt: "The Swordsman Renaissance Art" },
-        { src: "/images/masterpieceme/TheWhiteSorcererBG1-CanvasonFloor_300x.avif", alt: "The White Sorcerer Portrait" },
-        { src: "/images/masterpieceme/TheStepBrothersPosterMockUp_300x.avif", alt: "The Step Brothers Poster" },
-        { src: "/images/masterpieceme/145563982_1152554785181571_5536826764487585550_n_300x.avif", alt: "Masterpiece Me Featured Work" },
-        { src: "/images/masterpieceme/divineindc_118286570_335551904292831_2863370620445534766_n_300x.avif", alt: "Divine DC Renaissance Portrait" },
-        { src: "/images/masterpieceme/homesweethazel_113058249_122380609250351_4347520818081672827_n_300x.avif", alt: "Home Sweet Hazel Portrait" },
-        { src: "/images/masterpieceme/mar.torosian_118167732_228170102050720_7309799743468610605_n_300x.avif", alt: "Mar Torosian Classical Portrait" },
-        { src: "/images/masterpieceme/sonia.zubareva_102812657_4460477710644608_8846720010770244238_n_300x.avif", alt: "Sonia Zubareva Renaissance Art" }
-      ]
-    },
-    tellmytale: {
-      title: "Tell My Tale Portfolio Gallery",
-      description: "Story visualizations and book designs.",
-      images: [
-        { src: "/images/tellmytale/BookMockup_6-I.webp", alt: "Tell My Tale Book Mockup" },
-        { src: "/images/tellmytale/Book_Mockup_3.2-AA_1.webp", alt: "Animal Adventure Book Design" },
-        { src: "/images/tellmytale/TMT_anima_l_adventure_Boy.webp", alt: "Animal Adventure Character Design" },
-        { src: "/images/tellmytale/Romy-AnimalAdventure.webp", alt: "Romy Animal Adventure Story" },
-        { src: "/images/tellmytale/banner_2.webp", alt: "Tell My Tale Banner Design" },
-        { src: "/images/tellmytale/2.webp", alt: "Tell My Tale Story Illustration" }
-      ]
-    },
-    tailoredcanvases: {
-      title: "Tailored Canvases Portfolio Gallery",
-      description: "Custom canvas artwork and personalized designs.",
-      images: [
-        { src: "/images/tailoredcanvases/1_2_1_large.webp", alt: "Custom Canvas Design 1" },
-        { src: "/images/tailoredcanvases/1_b85d7d2b-b968-42e3-adcd-231cfe8d244a_1_large.webp", alt: "Custom Canvas Design 2" },
-        { src: "/images/tailoredcanvases/2_1778fabd-d109-45d2-b42c-0aaf0bd9ab51_1_large.webp", alt: "Custom Canvas Design 3" },
-        { src: "/images/tailoredcanvases/v1_1_2a2e91c0-87e0-4c70-89c5-c117affbb5cd_large.webp", alt: "Tailored Canvas Artwork" }
-      ]
-    },
-    wonderme: {
-      title: "Wonder Me Portfolio Gallery",
-      description: "Creative and personalized artwork.",
-      images: [
-        { src: "/images/wonderme/1_6.webp", alt: "Wonder Me Creative Design 1" },
-        { src: "/images/wonderme/2_5.webp", alt: "Wonder Me Creative Design 2" },
-        { src: "/images/wonderme/BatelAd-IMG1_aea88fbd-d8e6-4c84-96fe-06f15e71fc59.webp", alt: "Batel Advertisement Design 1" },
-        { src: "/images/wonderme/BatelAd-IMG2_7fd04ff5-347f-4e0e-85dc-41fce4e8e627.webp", alt: "Batel Advertisement Design 2" },
-        { src: "/images/wonderme/RachelEdel-IMG4.webp", alt: "Rachel Edel Custom Design" },
-        { src: "/images/wonderme/TheMermaid_1.webp", alt: "The Mermaid Artwork 1" },
-        { src: "/images/wonderme/TheMermaid_2.webp", alt: "The Mermaid Artwork 2" },
-        { src: "/images/wonderme/WM-1004-A_35729df3-cff5-4b93-887b-ff513fc1d65b.webp", alt: "Wonder Me Design WM-1004-A" },
-        { src: "/images/wonderme/WM-1004-B_5bbfa436-96a0-4f93-9558-87bc341f2426.webp", alt: "Wonder Me Design WM-1004-B" },
-        { src: "/images/wonderme/WM-1011A.webp", alt: "Wonder Me Design WM-1011A" }
-      ]
-    },
-    planetart: {
-      title: "PlanetArt Portfolio Gallery",
-      description: "Photo gifts and personalized product designs for PlanetArt and its subsidiary brands.",
-      images: [
-        { src: "/images/planetart/planetart.webp", alt: "PlanetArt Photo Gift Design" }
-      ]
-    }
-  }
-
-  const openGallery = (galleryType) => {
-    if (galleries[galleryType]) {
-      setSelectedGallery(galleryType)
-      setIsGalleryOpen(true)
-    }
-  }
-
-  const closeGallery = () => {
-    setIsGalleryOpen(false)
-    setSelectedGallery(null)
   }
 
   useEffect(() => {
@@ -443,7 +228,7 @@ function App() {
     sections.forEach(section => observer.observe(section))
     portfolioItems.forEach(item => observer.observe(item))
 
-    const navLinks = document.querySelectorAll('.nav-links a')
+    const navLinks = document.querySelectorAll('.nav-links a[href^="#"]')
     navLinks.forEach(link => {
       link.addEventListener('click', (e) => {
         e.preventDefault()
@@ -466,13 +251,65 @@ function App() {
 
   // Skills data with icons
   const skills = [
-    { name: 'Adobe Photoshop', level: 90, icon: PhotoshopIcon },
-    { name: 'Adobe Illustrator', level: 80, icon: IllustratorIcon },
-    { name: 'Adobe Lightroom', level: 70, icon: LightroomIcon },
-    { name: 'CapCut Video Editing', level: 80, icon: CapCutIcon },
-    { name: 'Canva Design', level: 90, icon: CanvaIcon },
-    { name: 'SketchUp 3D', level: 70, icon: SketchUpIcon },
-    { name: 'AI Image Generation', level: 80, icon: AIIcon }
+    { name: 'Network Administration', level: 90, icon: AIIcon },
+    { name: 'ISP/WISP Operations', level: 90, icon: HubstaffIcon },
+    { name: 'Ubiquiti Products & Wireless Links', level: 92, icon: SketchUpIcon },
+    { name: 'Systems Support', level: 92, icon: MicrosoftOfficeIcon },
+    { name: 'Firewall & Antivirus Administration', level: 85, icon: HubstaffIcon },
+    { name: 'Hardware Servicing & PC Repair', level: 90, icon: SketchUpIcon },
+    { name: 'User Account & Email Management', level: 88, icon: NotionIcon },
+    { name: 'Remote Troubleshooting', level: 90, icon: SlackIcon },
+    { name: 'Basic Linux & Cybersecurity Response', level: 78, icon: CapCutIcon },
+    { name: 'IT Documentation & Reporting', level: 86, icon: CanvaIcon },
+    { name: 'Basic HTML/Web Development', level: 75, icon: IllustratorIcon },
+    { name: 'Multimedia & Graphics Support', level: 82, icon: PhotoshopIcon },
+    { name: 'Photo and Visual Asset Editing', level: 78, icon: LightroomIcon }
+  ]
+
+  const experiences = [
+    {
+      role: 'Owner / ISP & WISP Operator',
+      company: 'FRGS IT Solutions',
+      period: '2021 - Present',
+      location: 'Malita, Davao Occidental, Philippines',
+      highlights: [
+        'Operate and manage ISP/WISP services, including wireless network planning, installation, monitoring, and customer support.',
+        'Deploy, configure, and troubleshoot Ubiquiti products for wireless links, access points, customer premises equipment, and network distribution.',
+        'Maintain service reliability by diagnosing connectivity issues, optimizing signal quality, managing devices, and responding to outages.'
+      ]
+    },
+    {
+      role: 'IT Specialist / MIS',
+      company: 'Davao Famous Bakery Foods Inc. / Pizza Pedricos / Xantino\'s Pizza',
+      period: 'June 2020 - Present',
+      location: 'Davao Region, Philippines',
+      highlights: [
+        'Monitor and maintain CCTV, telephone systems, business networks, workstations, and internet-sharing performance.',
+        'Install and configure operating systems, office applications, email browsers, peripherals, and workstation settings.',
+        'Administer MIS operations, antivirus systems, user accounts, passwords, computer inventory, and audit reports.'
+      ]
+    },
+    {
+      role: 'IT Specialist / Staff',
+      company: 'ASIAPRO Multi-Purpose Cooperative / TNALAK Labor Service Cooperative',
+      period: 'January 2017 - March 2020',
+      location: 'Davao Region, Philippines',
+      highlights: [
+        'Maintained computer systems, networks, firewall policies, backups, user access, and cooperative information systems.',
+        'Supported IFOMS, data migration, active user reviews, workstation specifications, and technical service requests.',
+        'Delivered remote and on-site branch support for departments and associate company locations.'
+      ]
+    },
+    {
+      role: 'IT / Encoder',
+      company: 'San Miguel Consolidated Power Corporation',
+      period: 'July 2016 - January 2017',
+      location: 'Malita, Davao Occidental',
+      highlights: [
+        'Troubleshot printers, computers, and network issues for the main office while supporting ISO documentation.',
+        'Created an ISO file management website and assisted departments with multimedia and document production.'
+      ]
+    }
   ]
 
   return (
@@ -482,12 +319,13 @@ function App() {
         <div className="nav-container">
           <div className="nav-brand">
             <a href="#home" className="logo">Rego Mongosera</a>
-            <span className="nav-badge"><span className="status-dot"></span>Available for Freelance</span>
+            <span className="nav-badge"><span className="status-dot"></span>Available for IT Roles</span>
           </div>
           <ul className="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="/Rego-Kier-Mongosera-IT-Network-Administrator-Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
             <li><a href="#contact">Contact</a></li>
             <li>
               <button
@@ -522,10 +360,10 @@ function App() {
             <span className="greeting">Hi, I'm</span>
             <span className="name">Rego Kier Mongosera</span>
           </h1>
-          <p className="subtitle">Professional Graphic Artist & Digital Portrait Specialist</p>
+          <p className="subtitle">IT Network Administrator, ISP/WISP Operator & Ubiquiti Specialist</p>
           <p className="description">
-            With 8 years of experience in graphic design, I specialize in creating stunning digital portraits,
-            custom pet portraits, and renaissance-style artwork. I'm passionate about bringing creative visions to life.
+            IT professional with 8+ years of experience maintaining networks, computer systems, user accounts,
+            endpoint security, CCTV, telephony, MIS operations, and wireless internet infrastructure.
           </p>
 
           {/* Social Links */}
@@ -545,7 +383,8 @@ function App() {
           </div>
 
           <div className="hero-cta">
-            <a href="#portfolio" className="cta-button primary">Explore My Work</a>
+            <a href="#experience" className="cta-button primary">View Experience</a>
+            <a href="/Rego-Kier-Mongosera-IT-Network-Administrator-Resume.pdf" target="_blank" rel="noopener noreferrer" className="cta-button secondary">Download Resume</a>
           </div>
         </div>
 
@@ -558,33 +397,10 @@ function App() {
         </div>
       </section>
 
-      {/* Trusted By Section */}
+      {/* Professional Focus Section */}
       <section className="trusted-by-section">
         <div className="container">
-          <p className="trusted-by-label">Trusted by leading companies</p>
-          <div className="trusted-by-carousel">
-            <div className="carousel-track">
-              <img src="/images/companies/22.avif" alt="Benafique" className="company-logo" />
-              <img src="/images/companies/Crown-and-Paw-Black-Trademark-Logo_145x.webp" alt="Crown and Paw" className="company-logo" />
-              <img src="/images/companies/Masterpiece_Me_Wax_Logo_Cropped_500x.avif" alt="Masterpiece Me" className="company-logo" />
-              <img src="/images/companies/TEllmyTale_Logo_wide_1.avif" alt="Tell My Tale" className="company-logo" />
-              <img src="/images/companies/WONDER_ME_LOGO.avif" alt="Wonder Me" className="company-logo" />
-              <img src="/images/companies/planetart-1720559646.svg" alt="PlanetArt" className="company-logo" />
-              <img src="/images/companies/photoaffections-logo-13-highres.png" alt="PhotoAffections" className="company-logo" />
-              <img src="/images/companies/personalcreation.png" alt="Personal Creations" className="company-logo" />
-              <img src="/images/companies/logo7.png" alt="Tailored Canvases" className="company-logo" />
-              {/* Duplicate for seamless loop */}
-              <img src="/images/companies/22.avif" alt="Benafique" className="company-logo" />
-              <img src="/images/companies/Crown-and-Paw-Black-Trademark-Logo_145x.webp" alt="Crown and Paw" className="company-logo" />
-              <img src="/images/companies/Masterpiece_Me_Wax_Logo_Cropped_500x.avif" alt="Masterpiece Me" className="company-logo" />
-              <img src="/images/companies/TEllmyTale_Logo_wide_1.avif" alt="Tell My Tale" className="company-logo" />
-              <img src="/images/companies/WONDER_ME_LOGO.avif" alt="Wonder Me" className="company-logo" />
-              <img src="/images/companies/planetart-1720559646.svg" alt="PlanetArt" className="company-logo" />
-              <img src="/images/companies/photoaffections-logo-13-highres.png" alt="PhotoAffections" className="company-logo" />
-              <img src="/images/companies/personalcreation.png" alt="Personal Creations" className="company-logo" />
-              <img src="/images/companies/logo7.png" alt="Tailored Canvases" className="company-logo" />
-            </div>
-          </div>
+          <p className="trusted-by-label">Supporting reliable IT operations, wireless connectivity, and ISP/WISP service delivery</p>
         </div>
       </section>
 
@@ -600,21 +416,21 @@ function App() {
             </div>
             <div className="stat-card glass-card">
               <div className="stat-number">
-                <AnimatedCounter end={1000} suffix="+" />
+                <AnimatedCounter end={4} suffix="+" />
               </div>
-              <div className="stat-label">Orders Completed</div>
+              <div className="stat-label">Years ISP/WISP</div>
             </div>
             <div className="stat-card glass-card">
               <div className="stat-number">
-                <AnimatedCounter end={5} suffix="★" />
+                <AnimatedCounter end={4} suffix="" />
               </div>
-              <div className="stat-label">Client Rating</div>
+              <div className="stat-label">IT Organizations</div>
             </div>
             <div className="stat-card glass-card">
               <div className="stat-number">
-                <AnimatedCounter end={12} suffix="" />
+                <AnimatedCounter end={350} suffix="+" />
               </div>
-              <div className="stat-label">Clients</div>
+              <div className="stat-label">Training Hours</div>
             </div>
           </div>
         </div>
@@ -627,62 +443,20 @@ function App() {
           <div className="about-content-text-only">
             <div className="about-text">
               <p>
-                I'm Rego Kier Mongosera, a dedicated graphic artist with 8 years of professional experience
-                specializing in digital portraits and photo manipulation. I've had the privilege of working with
-                multiple leading online portrait companies, creating thousands of custom artworks for clients worldwide.
+                I'm Rego Kier Mongosera, an IT specialist focused on keeping networks, workstations, user access,
+                business systems, wireless internet services, and security tools available and performing reliably. I own
+                FRGS IT Solutions, where I operate ISP/WISP services and work extensively with Ubiquiti products.
               </p>
               <p>
-                <strong>Platforms I've worked with:</strong>
+                <strong>Professional focus areas:</strong>
               </p>
               <div className="platform-cards">
-                <a href="https://benafique.com" target="_blank" rel="noopener noreferrer" className="platform-card">
-                  <span className="platform-name">Benafique.com</span>
-                  <span className="platform-desc">Minimalist digital portraits</span>
-                </a>
-                <a href="https://crownandpaw.com" target="_blank" rel="noopener noreferrer" className="platform-card">
-                  <span className="platform-name">CrownandPaw.com</span>
-                  <span className="platform-desc">Custom pet portraits</span>
-                </a>
-                <a href="https://masterpieceme.co" target="_blank" rel="noopener noreferrer" className="platform-card">
-                  <span className="platform-name">MasterpieceMe.co</span>
-                  <span className="platform-desc">Renaissance portraits</span>
-                </a>
-                <a href="https://tellmytale.com" target="_blank" rel="noopener noreferrer" className="platform-card">
-                  <span className="platform-name">TellMyTale.com</span>
-                  <span className="platform-desc">Story visualizations</span>
-                </a>
-                <a href="https://wonderme.com" target="_blank" rel="noopener noreferrer" className="platform-card">
-                  <span className="platform-name">WonderMe.com</span>
-                  <span className="platform-desc">Custom artwork</span>
-                </a>
-                <a href="https://planetart.com" target="_blank" rel="noopener noreferrer" className="platform-card">
-                  <span className="platform-name">PlanetArt.com</span>
-                  <span className="platform-desc">Photo gifts & personalized products</span>
-                </a>
-                <a href="https://simplytoimpress.com" target="_blank" rel="noopener noreferrer" className="platform-card">
-                  <span className="platform-name">SimplyToImpress.com</span>
-                  <span className="platform-desc">Personalized stationery & cards</span>
-                </a>
-                <a href="https://photoaffections.com" target="_blank" rel="noopener noreferrer" className="platform-card">
-                  <span className="platform-name">PhotoAffections.com</span>
-                  <span className="platform-desc">Custom photo products</span>
-                </a>
-                <a href="https://mycustomcase.com" target="_blank" rel="noopener noreferrer" className="platform-card">
-                  <span className="platform-name">MyCustomCase.com</span>
-                  <span className="platform-desc">Personalized phone cases</span>
-                </a>
-                <a href="https://canvasworld.com" target="_blank" rel="noopener noreferrer" className="platform-card">
-                  <span className="platform-name">CanvasWorld.com</span>
-                  <span className="platform-desc">Canvas prints & wall art</span>
-                </a>
-                <a href="https://personalcreations.com" target="_blank" rel="noopener noreferrer" className="platform-card">
-                  <span className="platform-name">PersonalCreations.com</span>
-                  <span className="platform-desc">Personalized gifts</span>
-                </a>
-                <a href="https://tailoredcanvases.com" target="_blank" rel="noopener noreferrer" className="platform-card">
-                  <span className="platform-name">TailoredCanvases.com</span>
-                  <span className="platform-desc">Custom canvas artwork</span>
-                </a>
+                <div className="platform-card"><span className="platform-name">Network Operations</span><span className="platform-desc">LAN, internet sharing, firewall, CCTV, telephony</span></div>
+                <div className="platform-card"><span className="platform-name">ISP/WISP Operations</span><span className="platform-desc">Wireless links, CPE, AP deployment, customer connectivity</span></div>
+                <div className="platform-card"><span className="platform-name">Ubiquiti Expertise</span><span className="platform-desc">Device configuration, troubleshooting, monitoring, optimization</span></div>
+                <div className="platform-card"><span className="platform-name">Systems Administration</span><span className="platform-desc">MIS, workstations, backups, accounts, email</span></div>
+                <div className="platform-card"><span className="platform-name">End-User Support</span><span className="platform-desc">Remote helpdesk, repairs, installations, inventory</span></div>
+                <div className="platform-card"><span className="platform-name">Security & Compliance</span><span className="platform-desc">Antivirus, USB scanning, user reviews, audit reports</span></div>
               </div>
 
               {/* Skills with Progress Bars */}
@@ -724,96 +498,51 @@ function App() {
               </div>
 
               <p>
-                I pride myself on delivering high-quality services with keen attention to detail, consistently
-                earning 5-star ratings from clients.
+                I bring a practical, service-oriented approach to IT: diagnose quickly, document clearly,
+                protect systems, and keep users productive.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Portfolio Section */}
-      <section id="portfolio" className="section">
+      {/* Experience Section */}
+      <section id="experience" className="section">
         <div className="container">
-          <h2 className="section-title">My Portfolio</h2>
-
-          {/* Filter Buttons */}
-          <div className="portfolio-filters">
-            {filters.map(filter => (
-              <button
-                key={filter.id}
-                className={`filter-btn ${activeFilter === filter.id ? 'active' : ''}`}
-                onClick={() => setActiveFilter(filter.id)}
-              >
-                {filter.label}
-              </button>
+          <h2 className="section-title">Professional Experience</h2>
+          <div className="experience-timeline">
+            {experiences.map((experience) => (
+              <article className="experience-card glass-card" key={`${experience.role}-${experience.period}`}>
+                <div className="experience-header">
+                  <div>
+                    <h3>{experience.role}</h3>
+                    <p className="experience-company">{experience.company}</p>
+                    <p className="experience-location">{experience.location}</p>
+                  </div>
+                  <span className="experience-period">{experience.period}</span>
+                </div>
+                <ul className="experience-highlights">
+                  {experience.highlights.map((highlight) => (
+                    <li key={highlight}>{highlight}</li>
+                  ))}
+                </ul>
+              </article>
             ))}
           </div>
-
-          <div className="portfolio-grid">
-            {filteredPortfolio.map((item, index) => (
-              <div
-                key={`${activeFilter}-${item.id}`}
-                className={`portfolio-item glass-card ${item.featured ? 'featured' : ''}`}
-                onClick={() => item.hasGallery && openGallery(item.id)}
-                style={{
-                  cursor: item.hasGallery ? 'pointer' : 'default',
-                  animationDelay: `${index * 0.1}s`
-                }}
-              >
-                {item.featured && <div className="featured-badge">Featured</div>}
-                <div className="portfolio-image-container">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="portfolio-image"
-                  />
-                  <div className="portfolio-overlay">
-                    <span>{item.hasGallery ? 'View Gallery' : 'View Details'}</span>
-                  </div>
-                </div>
-                <div className="portfolio-content">
-                  <h3 className="portfolio-title">{item.title}</h3>
-                  <p className="portfolio-description">{item.description}</p>
-                  <div className="portfolio-tags">
-                    {item.tags.map(tag => (
-                      <span key={tag} className="tag">{tag}</span>
-                    ))}
-                  </div>
-                  {item.hasGallery && (
-                    <div className="view-gallery-btn">Click to View Gallery</div>
-                  )}
-                </div>
-              </div>
-            ))}
+          <div className="resume-download-card glass-card">
+            <div>
+              <h3>Download the Full Resume</h3>
+              <p>Includes detailed skills, education, certifications, training, and additional IT support experience.</p>
+            </div>
+            <a href="/Rego-Kier-Mongosera-IT-Network-Administrator-Resume.pdf" target="_blank" rel="noopener noreferrer" className="cta-button primary">Open PDF</a>
           </div>
         </div>
       </section>
 
-      {/* Gallery Modal */}
-      {isGalleryOpen && selectedGallery && (
-        <div className="gallery-modal-overlay" onClick={closeGallery}>
-          <div className="gallery-modal glass-card" onClick={(e) => e.stopPropagation()}>
-            <div className="gallery-modal-header">
-              <h2>{galleries[selectedGallery].title}</h2>
-              <button className="close-button" onClick={closeGallery}>×</button>
-            </div>
-            <p className="gallery-modal-description">{galleries[selectedGallery].description}</p>
-            <div className="gallery-modal-grid">
-              {galleries[selectedGallery].images.map((image, index) => (
-                <div key={index} className="gallery-modal-item">
-                  <img src={image.src} alt={image.alt} />
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
-
       {/* Contact Section */}
       <section id="contact" className="section contact">
         <div className="container">
-          <h2 className="section-title">Let's Work Together</h2>
+          <h2 className="section-title">Contact</h2>
           <div className="contact-content">
             <div className="contact-info">
               <h3>Let's Connect</h3>
@@ -822,25 +551,26 @@ function App() {
                 <span>mongosera@gmail.com</span>
               </div>
               <div className="contact-item">
-                <span>Available for freelance projects</span>
+                <span>Available for IT network administration, ISP/WISP, and systems support roles</span>
               </div>
               <div className="contact-item">
                 <span>Philippines</span>
               </div>
               <div className="contact-item">
-                <a href="https://drive.google.com/drive/folders/1JxCWQT6oNLnxweHTFq0q7Jx3-1adSB87?usp=sharing"
+                <a href="/Rego-Kier-Mongosera-IT-Network-Administrator-Resume.pdf"
                    target="_blank"
                    rel="noopener noreferrer">
-                  View Portfolio Drive
+                  View Resume PDF
                 </a>
               </div>
               <div className="contact-specializations">
                 <strong>Specializations:</strong>
                 <ul>
-                  <li>Digital Portraits & Illustrations</li>
-                  <li>Photo Editing & Manipulation</li>
-                  <li>Adobe Creative Suite</li>
-                  <li>AI Image Generation</li>
+                  <li>Network administration and maintenance</li>
+                  <li>ISP/WISP operations and Ubiquiti products</li>
+                  <li>Systems, hardware, and peripheral support</li>
+                  <li>Firewall, antivirus, and backup administration</li>
+                  <li>User account, email, and remote support</li>
                 </ul>
               </div>
             </div>
@@ -862,7 +592,7 @@ function App() {
                   id="message"
                   name="message"
                   rows="5"
-                  placeholder="Tell me about your project..."
+                  placeholder="Tell me about the role or IT support need..."
                   required
                 ></textarea>
               </div>
@@ -878,7 +608,7 @@ function App() {
       {/* Footer */}
       <footer className="footer">
         <div className="container">
-          <p>&copy; 2024 Rego Kier Mongosera. All rights reserved.</p>
+          <p>&copy; 2026 Rego Kier Mongosera. All rights reserved.</p>
         </div>
       </footer>
     </div>
