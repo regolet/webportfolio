@@ -223,6 +223,25 @@
     radial-gradient(ellipse at 50% 50%, rgba(79, 70, 229, 0.1) 0%, transparent 70%);
 }
 
+/* IT Page hero - blue tinted gradient override */
+.hero-it .hero-bg-gradient {
+  background:
+    radial-gradient(ellipse at 20% 20%, rgba(29, 78, 216, 0.18) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(16, 185, 129, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(6, 182, 212, 0.06) 0%, transparent 70%);
+}
+
+/* IT page name - blue gradient text */
+.it-name {
+  font-size: 3.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--color-text-primary), #1d4ed8) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+
 .hero-content {
   max-width: 800px;
   margin: 0 auto;
@@ -1760,4 +1779,110 @@ a.platform-card {
   .gallery-modal-item img {
     height: 200px;
   }
+}
+
+/* ── IT ↔ Design Cross-navigation ──────────────────────────────────────── */
+.nav-it-link {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  color: white !important;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+.nav-it-link:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(79,70,229,0.4); }
+.nav-it-link::after { display: none !important; }
+
+.it-back-link {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--color-primary) !important;
+  font-weight: 500;
+  text-decoration: none;
+}
+.it-back-link:hover { opacity: 0.8; }
+.it-back-link::after { display: none !important; }
+
+/* IT Cross-link card */
+.it-crosslink-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.75rem 2rem;
+  margin-top: 2.5rem;
+  border-radius: var(--radius-lg);
+  border-left: 4px solid var(--color-primary);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  flex-wrap: wrap;
+}
+.it-crosslink-icon { font-size: 2.5rem; flex-shrink: 0; }
+.it-crosslink-text { flex: 1; min-width: 200px; }
+.it-crosslink-text h4 { margin: 0 0 0.4rem; font-size: 1.1rem; color: var(--color-text-primary); }
+.it-crosslink-text p { margin: 0; font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.5; }
+.it-crosslink-btn { flex-shrink: 0; animation: none !important; white-space: nowrap; }
+
+/* Section subtitle */
+.section-subtitle {
+  text-align: center;
+  color: var(--color-text-secondary);
+  margin-top: -2rem;
+  margin-bottom: 2.5rem;
+  font-size: 1rem;
+}
+
+/* Portfolio banner */
+.portfolio-banner-wrap {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+  box-shadow: var(--shadow-lg);
+}
+.portfolio-banner-img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.portfolio-banner-wrap:hover .portfolio-banner-img { transform: scale(1.02); }
+
+/* Portfolio grid */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.portfolio-card {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: all var(--transition-fast);
+}
+.portfolio-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: var(--color-primary); }
+.portfolio-card-icon { font-size: 2rem; line-height: 1; }
+.portfolio-card-title { font-size: 1.05rem; font-weight: 600; color: var(--color-text-primary); margin: 0; }
+.portfolio-card-desc { font-size: 0.88rem; color: var(--color-text-secondary); line-height: 1.6; margin: 0; flex: 1; }
+.portfolio-card-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.25rem; }
+.portfolio-tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: 50px;
+  background: linear-gradient(135deg, rgba(79,70,229,0.12), rgba(99,102,241,0.12));
+  color: var(--color-primary);
+  border: 1px solid rgba(79,70,229,0.2);
+}
+
+@media (max-width: 768px) {
+  .it-crosslink-card { gap: 1rem; padding: 1.25rem; }
+  .portfolio-banner-img { height: 200px; }
+  .portfolio-grid { grid-template-columns: 1fr; }
+  .nav-it-link { padding: 0.3rem 0.75rem; font-size: 0.8rem; }
 }
